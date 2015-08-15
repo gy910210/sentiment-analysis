@@ -1,5 +1,5 @@
 # sentiment-classification
-Kaggle challenge Bag of words meets bags of popcorn. And ranked 61/579.
+Kaggle challenge Bag of words meets bags of popcorn. And ranked 61/579, with precision 0.96255.
 
 # Method
 My method contains three parts. One is learning a shallow model; the other is learning a deep model. And then I combine the two models to train an ensemble model. 
