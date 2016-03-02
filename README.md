@@ -1,5 +1,5 @@
 # sentiment-classification
-Kaggle challenge "Bag of words meets bags of popcorn". And ranked 61/579, with precision 0.96255.
+Kaggle challenge "Bag of words meets bags of popcorn". And ranked 57th/578, with precision 0.96255.
 The website is [https://www.kaggle.com/c/word2vec-nlp-tutorial](https://www.kaggle.com/c/word2vec-nlp-tutorial).
 
 # Method
