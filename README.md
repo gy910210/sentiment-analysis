@@ -3,12 +3,12 @@ Kaggle challenge "Bag of words meets bags of popcorn". And ranked 57th/578, with
 The website is [https://www.kaggle.com/c/word2vec-nlp-tutorial](https://www.kaggle.com/c/word2vec-nlp-tutorial).
 
 # Method
-My method contains three parts. One is learning a shallow model; the other is learning a deep model. And then I combine the two models to train an ensemble model. 
+My method contains three parts. One is learning a shallow model; the other is learning a deep model. And then I combine the two models to train an ensemble model.
 
 #### Shallow Model
 The method involves a bag-of-words model, which represents the sentence or document by a vector of words. But due to the sentences have lots of noises, so I use a feature selection process. And chi-square statistic is adopted by me. This will result in a feature vector that is more relevant to the classification label. Then I use the TF-IDF score as each dimension of feature vector. Although I have selected the features, the dimension of feature vector is still very high (19000 features I use in our model). So I can use logistic regression to train the classification model. And I use L1 regularization. The process of training a shallow model is as following. And I call the mothed as BOW.
 
-![](https://github.com/gy910210/sentiment-analysis/raw/master/pic/shallow model.PNG)
+![](https://github.com/pangolulu/sentiment-analysis/blob/master/pic/shallow%20model.PNG)
 
 Why I call this model shallow? MaiInly because it adopts a bag-of-words based model, which only extracts the shallow words frequency of the sentence. But it will not involve the syntactic and semantic of the sentence. So I call it a shallow model. And I will introduce a deep model which can capture more meanings of sentence.
 
@@ -20,7 +20,7 @@ Recently, Le & Mikolov proposed an unsupervised method to learn distributed repr
 Such embeddings can then be used to represent sentences or paragraphs. And can be used as an input for a classifier. In my method, I first train a 200 dimensions paragraph vector. And then I adopt a SVM classifier with RBF kernel.
 The process of training a shallow model is as following.
 
-![](https://github.com/gy910210/sentiment-analysis/raw/master/pic/deep model.PNG)
+![](https://github.com/pangolulu/sentiment-analysis/blob/master/pic/deep%20model.PNG)
 
 #### Ensemble Model
 The ensemble model will involve the above two method (BOW and Doc2Vec). In practice, ensemble method can always result in high precise than single model. And the more diversity of the base models, the better performance the ensemble method can get. So combining the shallow model and the deep model is reasonable. Not just averaging the outputs of the two base models, I use the outputs of base models as input to another classifier. The architecture of the ensemble model is as follows.
@@ -28,4 +28,3 @@ The ensemble model will involve the above two method (BOW and Doc2Vec). In pract
 ![](https://github.com/gy910210/sentiment-analysis/raw/master/pic/ensemble.PNG)
 
 And in L2 level learning, I use logistic regression.
-
